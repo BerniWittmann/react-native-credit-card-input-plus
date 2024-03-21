@@ -137,7 +137,7 @@ class CardFlip extends Component {
             y: side === 0 ? 50 + progress * 50 : 90,
           },
           duration,
-          useNativeDriver: true,
+          useNativeDriver: false,
         })
       );
     } else {
@@ -148,7 +148,7 @@ class CardFlip extends Component {
             y: side === 0 ? 50 - progress * 50 : 90,
           },
           duration,
-          useNativeDriver: true,
+          useNativeDriver: false,
         })
       );
     }
@@ -159,7 +159,7 @@ class CardFlip extends Component {
           y: side === 0 ? 50 : 100,
         },
         duration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       })
     );
     Animated.sequence(sequence).start();
@@ -182,7 +182,7 @@ class CardFlip extends Component {
             y: side === 0 ? 50 + progress * 50 : 90,
           },
           duration,
-          useNativeDriver: true,
+          useNativeDriver: false,
         })
       );
 
@@ -193,7 +193,7 @@ class CardFlip extends Component {
             y: side === 0 ? 50 - progress * 50 : 110,
           },
           duration,
-          useNativeDriver: true,
+          useNativeDriver: false,
         })
       );
     }
@@ -204,7 +204,7 @@ class CardFlip extends Component {
           y: side === 0 ? 50 : 100,
         },
         duration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       })
     );
     Animated.sequence(sequence).start();
@@ -250,24 +250,24 @@ class CardFlip extends Component {
       Animated.timing(progress, {
         toValue: side === 0 ? 100 : 0,
         duration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }),
       Animated.sequence([
         Animated.timing(zoom, {
           toValue: 100,
           duration: duration / 2,
-          useNativeDriver: true,
+          useNativeDriver: false,
         }),
         Animated.timing(zoom, {
           toValue: 0,
           duration: duration / 2,
-          useNativeDriver: true,
+          useNativeDriver: false,
         }),
       ]),
       Animated.timing(rotation, {
         toValue,
         duration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }),
     ]).start(() => {
       this.props.onFlipEnd(side === 0 ? 1 : 0);
